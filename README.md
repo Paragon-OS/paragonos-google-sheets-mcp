@@ -1,17 +1,18 @@
 
-<div align="center">
-  <!-- Main Title Link -->
-  <b>mcp-google-sheets</b>
+# Google Sheets MCP Server
 
-  <!-- Description Paragraph -->
-  <p align="center">
-    <i>Your AI Assistant's Gateway to Google Sheets! </i>📊
-  </p>
+**Part of ParagonOS by Metarune Labs Pvt Ltd**
 
+![MCP Badge](https://badge.mcpx.dev)
 [![PyPI - Version](https://img.shields.io/pypi/v/mcp-google-sheets)](https://pypi.org/project/mcp-google-sheets/)
 [![PyPI Downloads](https://static.pepy.tech/badge/mcp-google-sheets)](https://pepy.tech/projects/mcp-google-sheets)
 ![GitHub License](https://img.shields.io/github/license/xing5/mcp-google-sheets)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/xing5/mcp-google-sheets/release.yml)
+
+<div align="center">
+  <p align="center">
+    <i>Your AI Assistant's Gateway to Google Sheets! </i>📊
+  </p>
 </div>
 
 ---
@@ -467,6 +468,12 @@ Contributions are welcome! Please open an issue to discuss bugs or feature reque
 
 ---
 
+## About ParagonOS
+
+ParagonOS is a comprehensive AI communication infrastructure platform developed by **Metarune Labs Pvt Ltd**, providing secure, reliable, and extensible bridges between AI assistants and modern communication platforms.
+
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -478,3 +485,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 *   Built with [FastMCP](https://github.com/cognitiveapis/fastmcp).
 *   Inspired by [kazz187/mcp-google-spreadsheet](https://github.com/kazz187/mcp-google-spreadsheet).
 *   Uses Google API Python Client libraries.
+
+---
+
+**Developed by Metarune Labs Pvt Ltd**
+Part of the ParagonOS ecosystem
