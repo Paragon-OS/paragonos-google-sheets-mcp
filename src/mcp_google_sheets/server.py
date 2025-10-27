@@ -122,7 +122,7 @@ mcp = FastMCP("Google Spreadsheet",
               lifespan=spreadsheet_lifespan)
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-get_sheet_data")
 def get_sheet_data(spreadsheet_id: str, 
                    sheet: str,
                    range: Optional[str] = None,
@@ -176,7 +176,7 @@ def get_sheet_data(spreadsheet_id: str,
 
     return result
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-get_sheet_formulas")
 def get_sheet_formulas(spreadsheet_id: str,
                        sheet: str,
                        range: Optional[str] = None,
@@ -211,7 +211,7 @@ def get_sheet_formulas(spreadsheet_id: str,
     formulas = result.get('values', [])
     return formulas
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-update_cells")
 def update_cells(spreadsheet_id: str,
                 sheet: str,
                 range: str,
@@ -250,7 +250,7 @@ def update_cells(spreadsheet_id: str,
     return result
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-batch_update_cells")
 def batch_update_cells(spreadsheet_id: str,
                        sheet: str,
                        ranges: Dict[str, List[List[Any]]],
@@ -292,7 +292,7 @@ def batch_update_cells(spreadsheet_id: str,
     return result
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-add_rows")
 def add_rows(spreadsheet_id: str,
              sheet: str,
              count: int,
@@ -350,7 +350,7 @@ def add_rows(spreadsheet_id: str,
     return result
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-add_columns")
 def add_columns(spreadsheet_id: str,
                 sheet: str,
                 count: int,
@@ -408,7 +408,7 @@ def add_columns(spreadsheet_id: str,
     return result
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-list_sheets")
 def list_sheets(spreadsheet_id: str, ctx: Context = None) -> List[str]:
     """
     List all sheets in a Google Spreadsheet.
@@ -430,7 +430,7 @@ def list_sheets(spreadsheet_id: str, ctx: Context = None) -> List[str]:
     return sheet_names
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-copy_sheet")
 def copy_sheet(src_spreadsheet: str,
                src_sheet: str,
                dst_spreadsheet: str,
@@ -504,7 +504,7 @@ def copy_sheet(src_spreadsheet: str,
     return {"copy": copy_result}
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-rename_sheet")
 def rename_sheet(spreadsheet: str,
                  sheet: str,
                  new_name: str,
@@ -558,7 +558,7 @@ def rename_sheet(spreadsheet: str,
     return result
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-get_multiple_sheet_data")
 def get_multiple_sheet_data(queries: List[Dict[str, str]], 
                             ctx: Context = None) -> List[Dict[str, Any]]:
     """
@@ -606,7 +606,7 @@ def get_multiple_sheet_data(queries: List[Dict[str, str]],
     return results
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-get_multiple_spreadsheet_summary")
 def get_multiple_spreadsheet_summary(spreadsheet_ids: List[str],
                                    rows_to_fetch: int = 5, 
                                    ctx: Context = None) -> List[Dict[str, Any]]:
@@ -729,7 +729,7 @@ def get_spreadsheet_info(spreadsheet_id: str) -> str:
     return json.dumps(info, indent=2)
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-create_spreadsheet")
 def create_spreadsheet(title: str, ctx: Context = None) -> Dict[str, Any]:
     """
     Create a new Google Spreadsheet.
@@ -768,7 +768,7 @@ def create_spreadsheet(title: str, ctx: Context = None) -> Dict[str, Any]:
     }
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-create_sheet")
 def create_sheet(spreadsheet_id: str, 
                 title: str, 
                 ctx: Context = None) -> Dict[str, Any]:
@@ -814,7 +814,7 @@ def create_sheet(spreadsheet_id: str,
     }
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-list_spreadsheets")
 def list_spreadsheets(ctx: Context = None) -> List[Dict[str, str]]:
     """
     List all spreadsheets in the configured Google Drive folder.
@@ -850,7 +850,7 @@ def list_spreadsheets(ctx: Context = None) -> List[Dict[str, str]]:
     return [{'id': sheet['id'], 'title': sheet['name']} for sheet in spreadsheets]
 
 
-@mcp.tool()
+@mcp.tool(name="google-sheets-share_spreadsheet")
 def share_spreadsheet(spreadsheet_id: str, 
                       recipients: List[Dict[str, str]],
                       send_notification: bool = True,
